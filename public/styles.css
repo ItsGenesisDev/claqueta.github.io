@@ -1,0 +1,349 @@
+    /* Estilos generales */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+  
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #660708;
+        padding-bottom: 2rem;
+      }
+  
+      header {
+        background-color: #221F1F;
+        color: white;
+        padding: 1.5rem;
+        display: grid;
+        grid-template-columns: 100px 1fr 100px;
+        align-items: center;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+  
+      /* Estilo para el título centrado */
+      header h1 {
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        font-size: 2.5rem;
+        color: #E50914;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        letter-spacing: 2px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        justify-self: center;
+        grid-column: 2;
+      }
+  
+      header h1::before,
+      header h1::after {
+        content: "🎬";
+        margin: 0 15px;
+        position: relative;
+        display: inline-block;
+      }
+  
+      /* Posicionamiento de los elementos del header */
+      header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        justify-self: start;
+        grid-column: 1;
+      }
+  
+      #addMovieBtn {
+        justify-self: end;
+        grid-column: 3;
+      }
+  
+      /* Botones */
+      .btn {
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+      
+      .btn:hover {
+        opacity: 0.9;
+      }
+      
+      .primary {
+        background-color: #E50914;;
+        color: white;
+      }
+      
+      .danger {
+        background-color: #e74c3c;
+        color: white;
+      }
+      .warning {
+        background-color: #ffc107;
+        color: white;
+      }
+      .secondary {
+        background-color: #7f8c8d;
+        color: white;
+      }
+      
+      /* Grid de películas */
+      .movies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 0 2rem;
+      }
+      
+      .movie-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .movie-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .movie-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .movie-info {
+        padding: 1.5rem;
+      }
+      
+      .movie-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .movie-date {
+        color: #7f8c8d;
+        margin-bottom: 0.5rem;
+      }
+      
+      .movie-rating {
+        font-weight: bold;
+        color: #f39c12;
+        margin-bottom: 1rem;
+      }
+      
+      .movie-description {
+        margin-bottom: 1.5rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      
+      .card-actions {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      /* Modales */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: auto;
+      }
+      
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 700px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+      
+      .close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      /* Formularios */
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+      
+      input, textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      
+      textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      
+      /* Detalles de película */
+      .movie-details {
+        margin-bottom: 2rem;
+      }
+      
+      .movie-details-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+      
+      .movie-details-info h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .movie-details-date {
+        color: #7f8c8d;
+        margin-bottom: 0.5rem;
+      }
+      
+      .movie-details-rating {
+        font-weight: bold;
+        color: #f39c12;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+      
+      .movie-details-description {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+      
+      /* Opiniones */
+      .opinions-list {
+        margin-bottom: 2rem;
+      }
+      
+      .opinion-card {
+        background-color: #f9f9f9;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+      
+      .opinion-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+      
+      .opinion-user {
+        font-weight: bold;
+      }
+      
+      .opinion-rating {
+        color: #f39c12;
+      }
+      
+      /* Mensaje de carga */
+      .loading {
+        text-align: center;
+        padding: 2rem;
+        grid-column: 1 / -1;
+        font-style: italic;
+        color: #7f8c8d;
+      }
+      
+      /* Imagen actual en formulario */
+      .current-image {
+        margin-top: 0.5rem;
+      }
+      
+      .current-image img {
+        max-width: 100%;
+        max-height: 150px;
+        border-radius: 4px;
+      }
+      
+      /* Acciones del modal */
+      .modal-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      
+      /* Mensaje de no hay opiniones */
+      .no-opinions {
+        font-style: italic;
+        color: #7f8c8d;
+        margin-bottom: 1rem;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        header {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto;
+          gap: 1rem;
+          text-align: center;
+        }
+        
+        header h1 {
+          font-size: 1.8rem;
+          grid-column: 1;
+          grid-row: 2;
+        }
+        
+        header img {
+          justify-self: center;
+          grid-column: 1;
+          grid-row: 1;
+        }
+        
+        #addMovieBtn {
+          justify-self: center;
+          grid-column: 1;
+          grid-row: 3;
+          
+        }
+        
+        header h1::before,
+        header h1::after {
+          margin: 0 10px;
+          font-size: 0.8em;
+        }
+        
+        .movies-grid {
+          grid-template-columns: 1fr;
+          padding: 0 1rem;
+        }
+        
+        .modal-content {
+          width: 95%;
+          padding: 1.5rem;
+        }
+      }

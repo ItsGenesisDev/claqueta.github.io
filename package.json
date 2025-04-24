@@ -1,0 +1,16 @@
+{
+  "name": "claqueta",
+  "version": "1.0.0",
+  "description": "Aplicación CRUD de películas",
+  "main": "server-commonjs.js",
+  "scripts": {
+    "start": "node server-commonjs.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1745515754347",
+    "name": "Sangre, sudor y gloria",
+    "description": "Es como Buenos Muchachos con esteroides. Cuando un ambicioso grupo de entrenadores personales (Mark Wahlberg, Dwayne Johnson y Anthony Mackie) van tras el sueño americano, se ven involucrados en una empresa criminal que termina terriblemente mal.",
+    "date": "2025-01-04",
+    "rating": 10,
+    "image": "/uploads/1745515754323.png",
+    "opinions": []
+  },
+  {
+    "id": "1745516300903",
+    "name": "Garra",
+    "description": "Un cazatalentos de baloncesto sin suerte descubre a un jugador extraordinario en Madrid y lo lleva a los Estados Unidos sin haber recibido una autorización previa del equipo para el que trabaja.",
+    "date": "2024-12-27",
+    "rating": 9,
+    "image": "/uploads/1745516300895.png",
+    "opinions": [
+      {
+        "id": "1745516641335",
+        "user": "Genesis",
+        "rating": 5,
+        "comment": "no me gusto mucho"
+      },
+      {
+        "id": "1745516650846",
+        "user": "a mi si",
+        "rating": 1,
+        "comment": "2ffef"
+      }
+    ]
+  }
+]

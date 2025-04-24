@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La claqueta</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="assets/claqueta_logo.png" alt="Logo de La claqueta" class="logo">
+    <h1>La claqueta</h1>
+    <button id="addMovieBtn" class="btn primary">Agregar Película</button>
+  </header>
+
+  <main>
+    <section id="moviesList" class="movies-grid">
+      <!-- Las películas se cargarán aquí dinámicamente -->
+      <div class="loading">Cargando películas...</div>
+    </section>
+
+    <!-- Modal para agregar/editar películas -->
+    <div id="movieModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">Agregar Película</h2>
+        <form id="movieForm">
+          <input type="hidden" id="movieId">
+          
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="date">Fecha de visualización:</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="rating">Calificación (0-10):</label>
+            <input type="number" id="rating" name="rating" min="0" max="10" step="0.1" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="image">Imagen:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <div id="currentImage" class="current-image"></div>
+          </div>
+          
+          <button type="submit" class="btn primary">Guardar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal para ver detalles y agregar opiniones -->
+    <div id="detailsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="movieDetails">
+          <!-- Detalles de la película -->
+        </div>
+        
+        <div id="opinionsSection">
+          <h3>Opiniones</h3>
+          <div id="opinionsList">
+            <!-- Opiniones se cargarán aquí -->
+          </div>
+          
+          <div id="addOpinionForm">
+            <h4>Agregar tu opinión</h4>
+            <form id="opinionForm">
+              <div class="form-group">
+                <label for="opinionUser">Tu nombre:</label>
+                <input type="text" id="opinionUser" name="user" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="opinionRating">Calificación (0-10):</label>
+                <input type="number" id="opinionRating" name="rating" min="0" max="10" step="0.1" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="opinionComment">Comentario:</label>
+                <textarea id="opinionComment" name="comment" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn primary">Enviar Opinión</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de confirmación para eliminar -->
+    <div id="deleteModal" class="modal">
+      <div class="modal-content">
+        <h2>Confirmar Eliminación</h2>
+        <p>¿Estás seguro de que deseas eliminar esta película? Esta acción no se puede deshacer.</p>
+        <div class="modal-actions">
+          <button id="confirmDelete" class="btn danger">Eliminar</button>
+          <button id="cancelDelete" class="btn">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
